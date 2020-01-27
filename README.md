@@ -10,6 +10,7 @@ The list of available templates is shown below.
 | ------------------ | ---------------------------------------------------- |
 | cover_letter       | Cover letter template                                |
 | cv                 | Curriculum vitae template                            |
+| note               | R Markdown template for note-taking                  |
 | one_column         | Single column template                               |
 | personal_statement | Personal statement template                          |
 | uni.bib            | File for storing all bibliographies (not a template) |
