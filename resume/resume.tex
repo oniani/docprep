@@ -1,0 +1,294 @@
+% This is a curriculum vitae built using the LaTeX package moderncv
+% Copyright (c) 2019 David Oniani (onianidavid@gmail.com)
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+% Compilation requirements: LaTeX Package with XeLaTeX or XeLaTeX Template
+
+% !TEX program = xelatex
+
+% moderncv class declaration
+% Possible options include font size ('10pt', '11pt' and '12pt')
+% Paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape')
+% Family of sources ('sans' and 'roman')
+\documentclass[a4paper, 10pt, sans]{moderncv}
+
+% Themes
+\moderncvstyle{classic}                % Options: banking, casual, classic, empty, oldstyle
+\moderncvcolor{blue}                   % Options: blue, orange, green, red, purple, grey, black
+
+% Packages
+\usepackage[utf8]{inputenc}          % Choose character encoding, UTF-8
+\usepackage[margin=0.5in]{geometry}  % Adjust margins
+\usepackage[normalem]{ulem}          % Cool underline
+\usepackage{multicol}                % Multiple columns
+
+% These are the color schemes for the themes
+% These color schemes are taken from the corresponding '.sty' files
+\definecolor{classicblack}{rgb}{0.0,0.0,0.0}      % black
+\definecolor{classicblue}{rgb}{0.22,0.45,0.70}    % blue
+\definecolor{classicgreen}{rgb}{0.35,0.70,0.30}   % green
+\definecolor{classicorange}{rgb}{0.95,0.55,0.15}  % orange
+\definecolor{classicpurple}{rgb}{0.50,0.33,0.80}  % purple
+\definecolor{classicred}{rgb}{0.95,0.20,0.20}     % red
+
+% 'moderncv' loads the package 'hyperref' by itself with its own 'hypersetup'.
+% This is done from 'moderncv.cls'. Hence, no need to load hyperref again.
+% Instead, load the 'hypersetup' using \AfterPreamble (or \AtBeginDocument)
+% hook as shown in the code below.
+\AfterPreamble{%
+  \hypersetup{% PDF information and nice-looking urls
+    pdfauthor  = {David Oniani},
+    pdftitle   = {David Oniani's Curriculum Vitae},
+    pdfsubject = {Curriculum vitae},
+    colorlinks = true,
+    linkcolor  = {classicblue},
+    citecolor  = {classicblue},
+    urlcolor   = {classicblue}
+  }
+}
+
+% Sometimes latex creates unnecessarily large spaces after dots, this helps to avoid it (puts single spaces at the end of sentences)
+\frenchspacing
+
+% Change quote width
+\let\originalrecomputecvlengths\recomputecvlengths
+\renewcommand*{\recomputecvlengths}{%
+\originalrecomputecvlengths%
+\setlength{\quotewidth}{0.8\textwidth}}
+
+% Change font size
+\renewcommand*{\namefont}{\fontsize{25}{20}\upshape}
+\renewcommand*{\sectionfont}{\fontsize{12}{20}\upshape}
+
+% Change column heading for the dates (THIS IS FOR THE ALIGNMENT)
+\setlength{\hintscolumnwidth}{1.35in}
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Customizing the Header (using the banking style ~ code from moderncvstylebanking.sty)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+% commands from moderncvstylebanking.sty to have the title
+% from that style
+\newcommand*{\maketitlesymbol}{%
+        {~~~{\rmfamily\textbullet}~~~}}% the \rmfamily is required to force Latin Modern fonts when using sans serif, as OMS/lmss/m/n is not defined and gets substituted by OMS/cmsy/m/n
+%   internal command to add an element to the footer
+%   it collects the elements in a temporary box, and checks when to flush the box
+\newsavebox{\maketitlebox}%
+\newsavebox{\maketitletempbox}%
+\newlength{\maketitlewidth}%
+\newlength{\maketitleboxwidth}%
+\newif\if@firstmaketitleelement\@firstmaketitleelementtrue%
+%   adds an element to the maketitle, separated by maketitlesymbol
+%   usage: \addtomaketitle[maketitlesymbol]{element}
+\newcommand*{\addtomaketitle}[2][\maketitlesymbol]{%
+        \if@firstmaketitleelement%
+        \savebox{\maketitletempbox}{\usebox{\maketitlebox}#2}%
+        \else%
+        \savebox{\maketitletempbox}{\usebox{\maketitlebox}#1#2}\fi%
+        \settowidth{\maketitleboxwidth}{\usebox{\maketitletempbox}}%
+        \ifnum\maketitleboxwidth<\maketitlewidth%
+        \savebox{\maketitlebox}{\usebox{\maketitletempbox}}%
+        \@firstmaketitleelementfalse%
+        \else%
+        \flushmaketitle{}\\%
+        \savebox{\maketitlebox}{#2}%
+        \savebox{\maketitletempbox}{#2}%
+        \settowidth{\maketitleboxwidth}{\usebox{\maketitlebox}}%
+        \@firstmaketitleelementfalse\fi}
+%   internal command to flush the maketitle
+\newcommand*{\flushmaketitle}{%
+        \strut\usebox{\maketitlebox}%
+        \savebox{\maketitlebox}{}%
+        \savebox{\maketitletempbox}{}%
+        \setlength{\maketitleboxwidth}{0pt}}
+\renewcommand*{\maketitle}{%
+        \setlength{\maketitlewidth}{1\textwidth}%                               % Spanning width of the title items
+        \hfil%
+        \parbox{\maketitlewidth}{%
+        \centering%                                                             % Centering the header
+        % Name and Title customization
+        \namestyle{\@firstname~\@lastname}%
+        \ifthenelse{\equal{\@title}{}}{}{\titlestyle{~|~\@title}}\\% \isundefined doesn't work on \@title, as LaTeX itself defines \@title (before it possibly gets redefined by \title)
+        % Detailed Information customization
+        \addressfont\color{color2}%
+        \ifthenelse{\isundefined{\@addressstreet}}{}{\addtomaketitle{\addresssymbol\@addressstreet}%
+        \ifthenelse{\equal{\@addresscity}{}}{}{\addtomaketitle[~--~]{\@addresscity}}% if \addresstreet is defined, \addresscity and \addresscountry will always be defined but could be empty
+        \ifthenelse{\equal{\@addresscountry}{}}{}{\addtomaketitle[~--~]{\@addresscountry}}%
+        \flushmaketitle\@firstmaketitleelementtrue\\}%
+        \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
+        \addtomaketitle{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
+        \ifthenelse{\isundefined{\@email}}{}{\addtomaketitle{\emailsymbol\emaillink{\@email}}}%
+        \ifthenelse{\isundefined{\@homepage}}{}{\addtomaketitle{\homepagesymbol\httplink{\@homepage}}}%
+        \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
+        \addtomaketitle{\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
+        \ifthenelse{\isundefined{\@extrainfo}}{}{\addtomaketitle{\@extrainfo}}%
+        \flushmaketitle}\\[1em]}% need to force a \par after this to avoid weird spacing bug at the first section if no blank line is left after \maketitle
+
+% \renewcommand*{\namefont}{\Huge\bfseries\upshape}
+\renewcommand*{\titlefont}{\Huge\mdseries\upshape}
+\renewcommand*{\addressfont}{\normalsize\mdseries\upshape}
+\renewcommand*{\quotefont}{\normalsize\upshape}
+
+% Styles
+\renewcommand*{\namestyle}[1]{{\setlength\parindent{-1.5em}\vspace*{-0.5em}\namefont\textcolor{color1}{#1}}\vspace*{0.25em}}
+\renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2!85}{#1}}}
+\renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{color1}{#1}}}
+\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color1}{#1}}}
+
+\renewcommand*{\makecvtitle}{%
+        % recompute lengths (in case we are switching from letter to resume, or vice versa)
+        \recomputecvlengths%
+        \maketitle%
+        % optional quote
+        \ifthenelse{\isundefined{\@quote}}%
+        {}%
+        {{\centering\begin{minipage}{\quotewidth}\centering\vspace*{-0.5em}\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
+        \par}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle}
+
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+% Personal Data
+\firstname{David}                                           % First name
+\lastname{Oniani}                                           % Last name
+\phone[mobile]{+1~(646)~565~1224}                           % Mobile number
+\email{onianidavid@gmail.com}                               % Email
+\homepage{www.davidoniani.com}                              % Personal Website
+\social[github]{oniani}                                     % Github
+\social[linkedin]{davidoniani}                              % LinkedIn
+
+% Message
+\quote{For my research papers, projects, and full CV, please visit \url{https://www.davidoniani.com}.}
+
+% The main part of the CV
+\begin{document}
+
+% Write the title
+\vspace*{-1.25cm}
+\makecvtitle
+\vspace*{-1cm}
+
+% Education
+\section{Education}
+  \cventry{08/2017 -- 06/2021 (expected)}
+    {B.A. Computer Science, Mathematics, 3.933 CS GPA}
+    {\href{www.luther.edu}{Luther College}}
+    {Decorah}
+    {IA}
+    {\textbf{Relevant courses}: Applied Statistics, Data Modeling and Querying,
+      Linear Algebra, Advanced Algorithms and Data Structures, Programming Languages,
+      Operating Systems and Architecture, Object-oriented programming with C++,
+      Models of Computation, Topology, Mathematical Reasoning and Writing, Game Theory.}
+
+% Technical Skills
+\section{Technical Skills}
+  \cvitem{Languages:}
+         {\textbf{Advanced}: Python, Haskell, Shellscript (POSIX-compliant), HTML, CSS.\newline
+          \textbf{Proficient}: R, Rust, Java, SQL, Javascript, TypeScript, C/C++, Zsh.\newline
+          \textbf{Acquainted}: Standard ML, Lua, Scheme, VBA, C\#, Batch.}
+  \cvitem{Development Tools:}
+         {macOS, Linux, kitty, Neovim, VS Code, Git, Jekyll, WordPress,
+          Virtual Box, GitHub, Jupyter, SageMath, RStudio, Cron, Travis CI,
+          Blender, Unity, Adobe Illustrator, ZBrush, Substance Painter,
+          3DS Max.}
+  \cvitem{Other Skills:}
+         {\LaTeX, Technical Writing, Markdown.}
+
+% Work Experience
+\section{Work Experience}
+  \cventry{02/2019 -- 05/21}{Undergraduate Intern - Kern Center}{\href{https://www.mayo.edu/research/centers-programs/robert-d-patricia-e-kern-center-science-health-care-delivery/about}{Mayo Clinic}}{Rochester}{MN}{}
+
+  \cventry{08/2019 -- Present}{Preceptor}{\href{https://www.luther.edu/computer-science/}{Luther College}}{Decorah}{IA}{}
+    \cvitemwithcomment{\footnotesize{Fall 2019}}{\href{https://www.luther.edu/catalog/curriculum/computer-science/}{Object-Oriented Programming With Java (CS 252) with Dr. Shafqat A. Shad.}}{}
+    \cvitemwithcomment{\footnotesize{Fall 2018}}{\href{https://www.luther.edu/catalog/curriculum/computer-science/}{Introduction to Computer Science (CS 150) with Dr. Alan K. Zaring.}}{}
+    \cvlistitem{Held help hours to assist students with homework assignments and answered questions during labs.}
+
+  \cventry{06/2018 -- 12/2018}{Web Programmer}{\href{https://www.luther.edu/its/}{Luther College, ITS - Software Development}}{Decorah}{IA}{}
+    \cvlistitem{Contributed to new \href{https://norsehub.luther.edu/}{Norse Hub} web system which has successfully replaced \href{https://my.luther.edu/}{my.luther.edu}.}
+    \cvlistitem{Communicated with team, wrote reports, and attended weekly SCRUM meetings.}
+    \cvlistitem{Conducted performance \& load testing using JMeter and presented results.}
+    % \cvlistitem{Created data visualization tool utilizing JavaScript DOM.}
+
+  \cventry{03/2017 -- 07/2017}{Co-Founder and CEO}{\href{https://www.linkedin.com/company/warblerltd/}{Warbler}}{Tbilisi}{Georgia}{}
+    \cvlistitem{Processed five-year data (180k+ rows) of UNE (Unified National Exams of Georgia).}
+    \cvlistitem{Designed logo; built pitch, presentation, and WordPress-based website for start-up.}
+    \cvlistitem{Created social media chatbot using Chatfuel API and set up Zoho mailing system.}
+
+% Research Experience
+\section{Research Experience}
+    % 08/2019 -- 12/2019
+    \cvitemwithcomment{\footnotesize{Fall 2019}}{\textbf{Directed research in programming languages with Dr. Alan K. Zaring.}}{}
+    \cvlistitem{Extended CCL language, wrote type-checking rules, made key contributions to type system.}
+
+    % 05/2019 -- 07/2019
+    \cvitemwithcomment{\footnotesize{Summer 2019}}{\textbf{Collaborative research on visual persuasion with professor Richard K. Merritt.}}{}
+    \cvlistitem{Trained convolutional neural networks for image recognition using PyTorch.}
+    \cvlistitem{Wrote Python scripts for PDF image/text extraction and data cleanup.}
+    \cvlistitem{Performed extensive set of both statistical and textual analyses using state-of-the-art algorithms.}
+
+    % 05/2018 -- 06/2018
+    \cvitemwithcomment{\footnotesize{Summer 2018}}{\href{https://www.luther.edu/headlines/?story_id=819818}{\textbf{Collaborative research on unit testing with Dr. Roman Yasinovskyy.}}}{}
+    \cvlistitem{Automated feedback generation for C++ programming course.}
+    \cvlistitem{Redesigned and significantly improved SQL and relational algebra solution checker.}
+    \cvlistitem{Designed testable practice problems for algorithms and data structures course.}
+
+% Honors and Awards
+\section{Honors and Awards}
+  \cvitem{2019}{Recipient of Competitive Herbert J. Rebassoo Scholarship, awarded by Math Department}
+  \cvitem{2018, 2019}{Recipient of Two Luther College Dean's Office Summer Research Awards}
+  \cvitem{All Semesters}{Dean's List Recipient, \href{www.luther.edu}{Luther College}}
+  \cvitem{2017}{Recipient of Highly Competitive Xie Math Scholarship, awarded by Math Department}
+  \cvitem{2017}{Selected Start-up Project (\href{https://www.linkedin.com/company/unleashar/}{UnleashAR}), TOP 200, \href{http://www.wolvessummit.com/}{Wolves Summit} (largest start-up investment/networking conference in Europe)}
+  \cvitem{2016}{Gold Medal for Academic Excellence, \href{http://mes.gov.ge/?lang=eng}{Ministry of Education and Science of Georgia}}
+  \cvitem{2011 -- 2016}{Five-time Finalist (TOP 35 out of over 3,000 participants), \href{https://naec.ge/}{National Mathematics Olympiad of Georgia}}
+
+% Language Proficiency
+\section{Language Proficiency}
+\hspace*{\fill}
+\begin{minipage}{\maincolumnwidth}
+  \begin{multicols}{3}
+    \begin{itemize}
+      \item English (Native/Bilingual)
+      \item Georgian (Native/Bilingual)
+    \end{itemize}
+    \columnbreak
+    \begin{itemize}
+      \item Russian (Native/Bilingual)
+      \item Japanese (Elementary)
+    \end{itemize}
+    \columnbreak
+    \begin{itemize}
+      \item Mingrelian (Native/Bilingual)
+    \end{itemize}
+  \end{multicols}
+\end{minipage}
+
+\end{document}

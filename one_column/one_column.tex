@@ -1,0 +1,273 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Filename: template.tex
+% Author:   David Oniani
+% Modified: November 7, 2019
+%  _         _____   __  __
+% | |    __ |_   _|__\ \/ /
+% | |   / _` || |/ _ \\  /
+% | |__| (_| || |  __//  \
+% |_____\__,_||_|\___/_/\_\
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Document Definition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages and Related Settings
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Global, document-wide settings
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% Bibliography and references
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% Other packages
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage[cache=false]{minted}
+\usepackage{tocloft}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematical Operations and Operators
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Sets and related operators
+\newcommand{\nats}{\mathbb{N}}                   % Natural numbers
+\newcommand{\pnats}{\mathbb{N}^+}                % Positive natural numbers
+
+\newcommand{\ints}{\mathbb{Z}}                   % Integers
+\newcommand{\pints}{\mathbb{Z}^+}                % Positive integers
+\newcommand{\nints}{\mathbb{Z}^-}                % Negative integers
+
+\newcommand{\rats}{\mathbb{Q}}                   % Rational numbers
+\newcommand{\prats}{\mathbb{Q}^+}                % Positive rational numbers
+\newcommand{\nrats}{\mathbb{Q}^-}                % Negative rational numbers
+
+\newcommand{\reals}{\mathbb{R}}                  % Real numbers
+\newcommand{\preals}{\mathbb{R}^+}               % Positive real numbers
+\newcommand{\nreals}{\mathbb{R}^-}               % Negative real numbers
+
+\newcommand{\irrats}{\mathbb{I}}                 % Irrational numbers
+
+\newcommand{\pset}{\mathcal{P}}                  % Powerset
+\newcommand{\card}{\abs}                         % Cardinality
+\newcommand{\topology}{\mathcal{T}}              % Topology
+\newcommand{\basis}{\mathcal{B}}                 % Basis
+\newcommand{\oldemptyset}{\emptyset}             % Old empty set
+\renewcommand{\emptyset}{\varnothing}            % New and nice empty set
+
+% Other operators
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}      % Absolute value
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}     % Ceiling
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}  % Floor
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Command Definitions and Redefinitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% New commands
+\newcommand{\rarr}{\rightarrow}             % Leftarrow
+\newcommand{\larr}{\leftarrow}              % Rightarrow
+\newcommand\und[1]{\underline{\smash{#1}}}  % Nice-looking underline
+\renewcommand{\baselinestretch}{1.5}        % Line spacing is 1.5
+
+% Rename "Contents" to "Table of Contents"
+\addto\captionsenglish{% Replace "english" with the language used
+  \renewcommand{\contentsname}%
+    {\textbf{Table of Contents}}}%
+
+% Filling the space for centering the title of the table of contents
+% Dots for ToC sections
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Miscellaneous
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Setting stuff
+\setlength{\parindent}{0pt}  % Remove indentations from paragraphs
+\pagestyle{fancy}            % This allows to do fancy headers and footers
+\fancyhf{}                   % No additional page numbering (or other stuff)
+\cfoot{\thepage}             % Display page number at the bottom, in the center
+
+% PDF information and nice-looking urls
+\hypersetup{%
+  pdfauthor={David Oniani},
+  pdftitle={Your Title Goes Here},
+  pdfsubject={Subject 1, Subject 2, and Subject 3},
+  pdfkeywords={Keyword 1, Keyword 2, Keyword 3},
+  pdflang={English},
+  colorlinks=true,
+  linkcolor={black!50!blue},
+  citecolor={black!50!blue},
+  urlcolor={black!50!blue}
+}
+
+% Put a centered header of a footnote size on the top of each page
+\chead{\footnotesize{Your Title Goes Here}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Author(s), Title, and Date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Author(s)
+\author{David Oniani\\
+        Luther College\\
+        \href{mailto:oniada01@luther.edu}{oniada01@luther.edu}
+        \and
+        David Oniani\\
+        Luther College\\
+        \href{mailto:oniada01@luther.edu}{oniada01@luther.edu}}
+
+% Title
+\title{\textbf{Your Title Goes Here}\\
+      {\small\textsuperscript{*}A note if necessary.}}
+
+% Date
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beginning of the Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+
+\noindent Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+est massa, fringilla euismod ex vitae, viverra auctor magna. Aenean quis ante
+enim. Mauris sollicitudin pretium tellus, non scelerisque urna. Nulla posuere
+tempus nisl, in porttitor eros imperdiet et. Morbi eleifend vestibulum felis,
+ut suscipit nunc placerat vel. Quisque nec aliquet nulla, ac faucibus ligula.
+Fusce iaculis augue elit, sed porttitor libero placerat porttitor. Morbi
+consequat eleifend sem, a eleifend odio egestas at. Duis placerat eleifend
+ligula, id egestas sem congue ut. Sed sapien felis, aliquet at semper vitae,
+efficitur non metus.
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\tableofcontents
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Example Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Example Section}
+
+Proin~\cite{munkres2000} posuere suscipit ante, vitae eleifend nulla rhoncus
+in. Etiam vitae tellus vel augue porta consectetur in et risus. Nunc placerat
+in massa vel ultricies. In pharetra id odio vitae porttitor. Donec blandit
+tincidunt nunc, vitae dignissim massa semper in. Nulla facilisis imperdiet nisi
+dignissim suscipit. Proin auctor turpis vitae magna elementum, vitae imperdiet
+nunc blandit.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=4cm, height=4cm]{image/two-rod-system}
+  \caption{A two-rod system ($2R$ robot).}
+\end{figure}
+
+Etiam arcu dui, volutpat accumsan tempor vel, blandit a quam. Sed non tortor
+maximus, ullamcorper purus id, fringilla nibh. Phasellus fringilla ac massa vel
+congue. Ut fringilla id quam quis condimentum. Nulla a rhoncus risus. Morbi ut
+semper diam, faucibus mattis risus. Donec efficitur congue risus, vitae varius
+sapien hendrerit sit amet. Duis fringilla, enim sed aliquet gravida, dolor arcu
+posuere lacus, vel lacinia neque velit non sapien.
+
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{*{2}{c}}
+    \toprule
+    Year & Quantity\\
+    \midrule
+    5000 & 5001\\
+    \midrule
+    5001 & 5002\\
+    \midrule
+    5002 & 5003\\
+    \bottomrule
+  \end{tabular}
+  \caption{A table.}
+\end{figure}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta purus et
+sem gravida rutrum. Maecenas blandit nulla ac luctus tempus. Nam finibus
+posuere ante, et lacinia massa vestibulum sit amet. Nulla velit arcu, efficitur
+quis turpis nec, sollicitudin lobortis nisi. Vivamus ut diam ut eros faucibus
+fringilla. Suspendisse pellentesque magna nec velit tristique sollicitudin.
+Morbi ultrices nec augue et molestie. Nam sapien ante, ullamcorper elementum
+convallis id, faucibus in lectus. Fusce pellentesque mollis velit efficitur
+porta. Sed finibus ligula quam, et lacinia velit posuere auctor. Donec ligula
+lorem, dictum nec lectus in, vehicula tincidunt massa. In hac habitasse platea
+dictumst.
+
+\subsection{This is a subsection}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Aenean porta purus et sem gravida rutrum.
+Maecenas blandit nulla ac luctus tempus.
+Nam finibus posuere ante, et lacinia massa vestibulum sit amet.
+Nulla velit arcu, efficitur quis turpis nec, sollicitudin lobortis nisi.
+Vivamus ut diam ut eros faucibus fringilla.
+Suspendisse pellentesque magna nec velit tristique sollicitudin.
+Morbi ultrices nec augue et molestie.
+Nam sapien ante, ullamcorper elementum convallis id, faucibus in lectus.
+Fusce pellentesque mollis velit efficitur porta.
+Sed finibus ligula quam, et lacinia velit posuere auctor.
+Donec ligula lorem, dictum nec lectus in, vehicula tincidunt massa.
+In hac habitasse platea dictumst.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Other Section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Other Section}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Aenean porta purus et sem gravida rutrum.
+Maecenas blandit nulla ac luctus tempus.
+Nam finibus posuere ante, et lacinia massa vestibulum sit amet.
+Nulla velit arcu, efficitur quis turpis nec, sollicitudin lobortis nisi.
+Vivamus ut diam ut eros faucibus fringilla.
+Suspendisse pellentesque magna nec velit tristique sollicitudin.
+Morbi ultrices nec augue et molestie.
+Nam sapien ante, ullamcorper elementum convallis id, faucibus in lectus.
+Fusce pellentesque mollis velit efficitur porta.
+Sed finibus ligula quam, et lacinia velit posuere auctor.
+Donec ligula lorem, dictum nec lectus in, vehicula tincidunt massa.
+In hac habitasse platea dictumst.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography and References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\printbibliography[heading=bibintoc]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The End of the Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

@@ -1,0 +1,273 @@
+% This is a curriculum vitae built using the LaTeX package moderncv
+% Copyright (c) 2019 David Oniani <onianidavid@gmail.com>
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+% Compilation requirements: LaTeX Package with XeLaTeX or XeLaTeX Template
+
+% Settings {{{
+
+% moderncv class declaration
+% Possible options include font size ('10pt', '11pt' and '12pt')
+% Paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper',
+% 'executivepaper' and 'landscape'). Family of sources ('sans' and 'roman')
+\documentclass[a4paper,10pt,sans]{moderncv}
+
+% Themes
+\moderncvstyle{classic}  % Options: banking, casual, classic, empty, oldstyle
+\moderncvcolor{blue}     % Options: blue, orange, green, red, purple, grey, black
+
+% Packages
+\usepackage[utf8]{inputenc}          % Choose character encoding, UTF-8
+\usepackage[margin=0.5in]{geometry}  % Adjust margins
+\usepackage[normalem]{ulem}          % Cool underline
+\usepackage{fancyhdr}                % Fancy headers and footers
+
+% These are the color schemes for the themes
+% These color schemes are taken from the corresponding '.sty' files
+\definecolor{classicblack}{rgb}{0.0,0.0,0.0}      % black
+\definecolor{classicblue}{rgb}{0.22,0.45,0.70}    % blue
+\definecolor{classicgreen}{rgb}{0.35,0.70,0.30}   % green
+\definecolor{classicorange}{rgb}{0.95,0.55,0.15}  % orange
+\definecolor{classicpurple}{rgb}{0.50,0.33,0.80}  % purple
+\definecolor{classicred}{rgb}{0.95,0.20,0.20}     % red
+
+% 'moderncv' loads the package 'hyperref' by itself with its own 'hypersetup'.
+% This is done from 'moderncv.cls'. Hence, no need to load hyperref again.
+% Instead, load the 'hypersetup' using \AfterPreamble (or \AtBeginDocument)
+% hook as shown in the code below.
+\AfterPreamble{%
+  % PDF information and nice-looking urls
+  \hypersetup{%
+    pdfauthor={David Oniani},
+    pdftitle={David Oniani's Curriculum Vitae},
+    pdfsubject={Curriculum Vitae},
+    pdfkeywords={Curriculum Vitae},
+    pdflang={English},
+    colorlinks=true,
+    linkcolor={classicblue},
+    citecolor={classicblue},
+    urlcolor={classicblue}
+  }
+}
+
+% Display last updated date
+\lhead{\vspace{0.3cm}
+       \color{classicblue}
+       \footnotesize{Updated: \today\ by David Oniani}}
+
+% Sometimes latex creates unnecessarily large spaces after dots. this helps to
+% avoid it. This puts single spaces at the end of sentences.
+\frenchspacing
+
+% Display page number at the bottom in the center
+\cfoot{\vspace{-0.75cm}\thepage}
+
+% Change column heading for the dates (THIS IS FOR THE ALIGNMENT)
+\setlength{\hintscolumnwidth}{8em}
+
+% Change quote width
+\let\originalrecomputecvlengths\recomputecvlengths%
+\renewcommand*{\recomputecvlengths}{%
+\originalrecomputecvlengths%
+\setlength{\quotewidth}{0.8\linewidth}}
+
+% }}}
+
+% Personal Data {{{
+
+\firstname{\color{classicblue} David}                                                % First name
+\lastname{\color{classicblue} Oniani}                                                % Last name
+\phone[mobile]{+1~(646)~565~1224}                                                    % Mobile number
+\email{onianidavid@gmail.com}                                                        % Email
+\homepage{www.davidoniani.com}                                                       % Personal Website
+\social[github][www.github.com/oniani]{www.github.com/oniani}                        % Github
+\social[linkedin][www.linkedin.com/in/davidoniani]{www.linkedin.com/in/davidoniani}  % LinkedIn
+
+% Message
+\quote{For my papers and projects please visit \url{https://www.davidoniani.com}.}
+
+% }}}
+
+% Begin the document
+\begin{document}
+
+% {{{ Title
+
+\vspace*{-1.25cm}
+\makecvtitle
+\vspace*{-1cm}
+
+% }}}
+
+% Education {{{
+
+\section{Education}
+  \cventry{08/2017 -- 06/2021}
+    {B.A. Computer Science, Mathematics}
+    {\href{www.luther.edu}{Luther College}}
+    {Decorah}
+    {IA}
+    {Double major in mathematics and computer science.\\
+     Advisor: Dr.~Alan K. Zaring.}
+     % \\
+     % Math Advisor(s): Dr. Philip Iversen and Dr. Kyle Fey.}
+
+  \cventry{10/2016 -- 12/2016}
+    {Sales MBA Diploma}
+    {\href{https://www.isi.ge}{International Sales Institute}}
+    {Tbilisi}
+    {Georgia}
+    {Rigorous trainings in inbound \& outbound sales, merchandising,
+     and marketing operations.}
+
+  \cventry{09/2011 -- 07/2016}
+    {High School Diploma}
+    {\href{https://www.linkedin.com/school/komarovi-campus-school/}{Komarovi Campus School}}
+    {Tbilisi}
+    {Georgia}
+    {Graduated with the highest honors. Represented the school in various math
+     and physics olympiads.}
+
+% }}}
+
+% Work Experience {{{
+
+\section{Work Experience}
+  \cventry{08/2019 -- Present}{Preceptor}{\href{https://www.luther.edu/computer-science/}{Luther College}}{Decorah}{IA}{}
+    \cvitemwithcomment{\footnotesize{Fall 2019}}{\href{https://www.luther.edu/catalog/curriculum/computer-science/}{Object-Oriented Programming With Java (CS 252) with Dr. Shafqat A. Shad.}}{}
+    \cvitemwithcomment{\footnotesize{Fall 2018}}{\href{https://www.luther.edu/catalog/curriculum/computer-science/}{Introduction to Computer Science (CS 150) with Dr. Alan K. Zaring.}}{}
+    \cvlistitem{Held help hours and assisted students with homework assignments.}
+    \cvlistitem{Attended all classes and answered students' questions during the labs.}
+
+  \cventry{06/2018 -- 12/2018}{Web Programmer}{\href{https://www.luther.edu/its/}{Luther College, ITS - Software Development}}{Decorah}{IA}{}
+    \cvlistitem{Contributed to the brand new \href{https://norsehub.luther.edu/}{Norse Hub} web system which has successfully replaced \href{https://my.luther.edu/}{my.luther.edu}.}
+    \cvlistitem{Communicated with the team, wrote reports, and attended weekly SCRUM meetings.}
+    \cvlistitem{Conducted performance \& load testing using JMeter and presented the results.}
+    \cvlistitem{Created a data visualization tool utilizing JavaScript DOM.}
+    \cvlistitem{Migrated from the Microsoft to the Linux server and refactored the Python code.}
+
+  \cventry{03/2017 -- 07/2017}{Co-Founder and CEO}{\href{https://www.linkedin.com/company/warblerltd/}{Warbler}}{Tbilisi}{Georgia}{}
+    \cvlistitem{Spearheaded the team of young and enthusiastic software developers.}
+    \cvlistitem{Processed five-year data (180k+ rows) of UNE (Unified National Exams of Georgia).}
+    \cvlistitem{Designed the logo; built the pitch, presentation, and the WordPress-based website for the start-up.}
+    \cvlistitem{Created a social media chatbot using Chatfuel API and set up Zoho mailing system.}
+
+  \cventry{11/2016 -- 09/2017}{Freelance Graphic Designer}{\href{https://www.behance.net}{Behance (not affiliated)}}{}{}{}
+    \cvlistitem{\href{https://www.behance.net/oniani}{Designed logos and posters for various companies in the local and the global market.}}
+    \cvlistitem{Instructed and taught the basics of design to several aspiring graphic designers.}
+
+  \cventry{10/2016 -- 06/2017}{Sales Representative and Marketing Coordinator}{\href{https://www.insta.ge}{Insta LLC}}{Tbilisi}{Georgia}{}
+    \cvlistitem{Partook in the complete rebuild and redesign of sales and marketing departments.}
+    \cvlistitem{Contributed to the CRM, was responsible for data gathering, filtering, and entry.}
+    \cvlistitem{Managed social media, responsible for targeted campaigns, copywriting, and image-editing.}
+    \cvlistitem{Cold-called and contacted clients to build and maintain long-term relationships.}
+    \cvlistitem{Attended a number of staff meetings and new product/partner presentations.}
+
+% }}}
+
+% Research Experience {{{
+
+\section{Research Experience}
+    % 08/2019 -- 12/2019
+    \cvitemwithcomment{\footnotesize{Fall 2019}}{\textbf{Directed research in programming languages with Dr. Alan K. Zaring.}}{}
+    \cvlistitem{Redesigned and made a few significant contributions to the type system.}
+    \cvlistitem{Introduced the notion of container types to the language.}
+
+    % 05/2019 -- 07/2019
+    \cvitemwithcomment{\footnotesize{Summer 2019}}{\textbf{Collaborative research on visual persuasion with professor Richard K. Merritt.}}{}
+    \cvlistitem{Trained convolutional neural networks for image recognition using PyTorch.}
+    \cvlistitem{Wrote Python scripts for PDF image/text extraction and data cleanup.}
+    \cvlistitem{Performed an extensive set of both statistical and textual/NLP analyses using state-of-the-art algorithms.}
+
+    % 05/2018 -- 06/2018
+    \cvitemwithcomment{\footnotesize{Summer 2018}}{\href{https://www.luther.edu/headlines/?story_id=819818}{\textbf{Collaborative research on unit testing with Dr. Roman Yasinovskyy}.}}{}
+    \cvlistitem{Automated feedback generation for C++ programming course.}
+    \cvlistitem{Redesigned and significantly improved SQL and relational algebra solution checker.}
+    \cvlistitem{Designed testable practice problems for the algorithms and data structures course.}
+
+% }}}
+
+% Volunteer Experience {{{
+
+\section{Volunteer Experience}
+  \cvitemwithcomment{2016}{\href{https://www.transparency.ge/en}{Transparency International Georgia}}{Observed Georgian Parliamentary Elections}
+  \cvitemwithcomment{2016}{\href{https://www.khanacademy.org/}{Khan Academy}}{Subtitled Georgian and Russian videos}
+
+% }}}
+
+% Honors and Awards {{{
+
+\section{Honors and Awards}
+  \cvitem{2017, 2018, 2019}{Multiple Competitive Scholarships, \href{www.luther.edu}{Luther College}}
+  \cvitem{2018, 2019}{Recipient of 2 Luther College Dean's Office Summer Research Awards, \href{www.luther.edu}{Luther College}}
+  \cvitem{All Semesters}{Dean's List Recipient, \href{www.luther.edu}{Luther College}}
+  \cvitem{2017}{Selected Start-up Project (\href{https://www.linkedin.com/company/unleashar/}{UnleashAR}), TOP 200, \href{http://www.wolvessummit.com/}{Wolves Summit}}
+  \cvitem{2016}{Gold Medal for Academic Excellence, \href{http://mes.gov.ge/?lang=eng}{Ministry of Education and Science of Georgia}}
+  \cvitem{2011 -- 2016}{Five-time Finalist (7\textsuperscript{th} Place, TOP 10, in 2014), \href{https://naec.ge/}{National Mathematics Olympiad of Georgia}}
+  \cvitem{2014}{IMO \& IPhO Nominee, \href{http://mes.gov.ge/?lang=eng}{Ministry of Education and Science of Georgia}}
+  \cvitem{2011 -- 2016}{Won a number of various mathematical olympiads, Varied}
+
+% }}}
+
+% Other Courses and Certificates {{{
+
+\section{Other Courses and Certificates}
+  \cvitem{2018}
+         {\href{https://developers.google.com/machine-learning/crash-course/}{Machine Learning Crash Course}, Google}
+
+  \cvitem{2017}
+         {\href{https://www.davidoniani.com/assets/certificates/campus-clarity.jpg}{Think About It}, Campus Clarity}
+
+  \cvitem{2017}
+         {\href{http://www.linkedin.com/learning/how-to-rock-social-media}{How to Rock Social Media}, LinkedIn Learning}
+
+  \cvitem{2016}
+         {\href{https://www.davidoniani.com/assets/certificates/south-caucasus-leadership-forum-2016.jpg}{South Caucasus Leadership Forum Participant}, GSFL, Friedrich Naumann Foundation}
+
+  \cvitem{2016}
+         {\href{https://www.transparency.ge/en}{Parliamentary Elections Observation Mission Training}, Transparency International Georgia}
+
+% }}}
+
+% Technical Skills {{{
+\section{Technical Skills}
+  \cvitem{Languages:}
+         {Python, Haskell, Shellscript (POSIX-compliant), Rust, JavaScript,
+          Java, R, C++, C, HTML, CSS, TypeScript, Bash, Zsh, Vimscript,
+          SQL, Standard ML, Scheme, VBA, Lua, C\#, CCL, Batch script.}
+  \cvitem{Development Tools:}
+         {macOS, Linux, kitty, Neovim, VS Code, Git, Jekyll, WordPress,
+          Virtual Box, GitHub, Jupyter, SageMath, RStudio, Cron, Travis CI,
+          Blender, Unity, Adobe Illustrator, ZBrush, Substance Painter,
+          3DS Max.}
+  \cvitem{Other Skills:}
+         {\LaTeX, Technical Writing, Markdown.}
+
+% }}}
+
+% Language Proficiency {{{
+
+\section{Language Proficiency}
+  \cvitem{English}{Native Proficiency}
+  \cvitem{Georgian}{Native Proficiency}
+  \cvitem{Russian}{Native  Proficiency}
+  \cvitem{Japanese}{Elementary Proficiency}
+  \cvitem{Mingrelian}{Native Proficiency (one of Kartvelian languages, widespread in western parts of Georgia)}
+
+% }}}
+
+% Papers, Posters, and Poster Presentations {{{
+
+\section{Papers, Reports, and Poster Presentations}
+  \cvitem{2019}{\href{https://www.davidoniani.com/assets/pdf/ira-analysis.pdf}{Textual and Statistical Analysis of Russian IRA Facebook Advertisements}}
+  \cvitem{2019}{\href{https://www.davidoniani.com/assets/pdf/graduate-admissions-stats.pdf}{Exploring Graduate Admissions}}
+  \cvitem{2019}{\href{https://www.davidoniani.com/assets/pdf/agv-paper.pdf}{The Topology of Robotic Configuration and Motion Planning}}
+  \cvitem{2018}{\href{https://www.davidoniani.com/assets/pdf/summer_2018_research_report.pdf}{Unit testing frameworks in the classroom (applied research report)}}
+  \cvitem{2018}{\href{https://www.davidoniani.com/assets/pdf/baichwal_manufactured_landscapes.pdf}{Photography as a socially influential medium in Jennifer Baichwal’s \textit{Manufactured Landscapes}}~}
+
+% }}}
+
+% End the document
+\end{document}

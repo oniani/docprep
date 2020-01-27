@@ -1,0 +1,122 @@
+% Copyright 2020 David Oniani (onianidavid@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[a4paper,12pt,sans]{moderncv}
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+
+% Adjust the page margins
+\usepackage[margin=1in]{geometry}
+
+% Language
+\usepackage[english]{babel}
+
+% Justify text
+\usepackage{ragged2e}
+
+% Classic blue color
+\definecolor{classicblue}{rgb}{0.22,0.45,0.70}
+
+% Set spacing
+\linespread{1.2}
+
+% 'moderncv' loads the package 'hyperref' by itself with its own 'hypersetup'.
+% This is done from 'moderncv.cls'. Hence, no need to load hyperref again.
+% Instead, load the 'hypersetup' using \AfterPreamble (or \AtBeginDocument)
+% hook as shown in the code below.
+\AfterPreamble{%
+  \hypersetup{%
+    pdfauthor={David Oniani},
+    pdftitle={David Oniani's Personal Statement},
+    pdfsubject={Personal Statement, Mayo Clinic},
+    pdfkeywords={Personal Statement, Mayo Clinic},
+    pdflang={English},
+    colorlinks=true,
+    linkcolor={classicblue},
+    citecolor={classicblue},
+    urlcolor={classicblue}
+  }
+}
+
+% Personal data
+\firstname{David}
+\lastname{Oniani}
+\phone[mobile]{+1~(646)~565~1224}
+\email{onianidavid@gmail.com}
+\homepage{www.davidoniani.com}
+
+% Recipient data
+\recipient{PROGRAM Recruiter}{Company}
+\date{January 11, 2020}
+\opening{Dear Recruiter,}
+\closing{Sincerely,}
+
+\begin{document}
+
+\makelettertitle%
+
+\justify%
+
+My career aspiration is to become an R\&D-type industry researcher. My research
+interests include artificial intelligence, programming languages, and virtual
+reality. I have realized that all of these subfields of computer science are
+deeply linked to medical fields and can be used to solve a number of problems
+in these areas.
+
+My motivation for pursuing research related to artificial intelligence stems
+from my recent summer research with Prof.~Merritt where we have explored the
+2016 influence campaign launched and executed by Russian IRA (so-called
+Internet Research Agency). We have utilized a number of data mining, data
+analysis, and machine learning techniques in order to both analyze the
+persuasive strategies utilized in this campaign as well as to make future
+predictions based on the data that we obtained by scraping the PDF files made
+publicly available by House Intelligence Committee. Besides, a number of binary
+image classifiers were trained in order to classify images based on the type of
+discord it spreads (whether it is race-based, religion-based, etc).  This
+research experience showed me the diverse uses of AI and made me think about
+its ethics as our work was revolving around the topics that are so sensitive to
+people. Coming from a family of neurosurgeons, pharmacists, and doctors, the
+emergence of AI made me wonder about its applications in medical domains.
+Ultimately, I have applied to and been accepted at the Kern Center for the
+Science of Health Care Delivery and starting coming spring, I will be working
+alongside Dr.~Wang and Dr.~Shen on natural language processing and
+translational science projects in order to facilitate secondary use of EHRs for
+clinical and translational science research and health care delivery
+improvement through artificial intelligence, informatics, and data science
+approaches.
+
+My fall semester directed research with Dr.~Zaring has sparked my interest in
+programming languages. I have gained experience in writing type-checking rules
+and in designing and extending a programming language. The research included
+both theoretical work with the mathematicological aspects of the language's
+(CCL) specification and practical work with the existing processors for the
+language. I have designed a number of new operators for the language's type
+system as well introduced the notion of compound/container types to the
+language. The important lesson I have learned during the research is that one
+can come up with a language with a particular problem in mind in lieu of
+forcing a language, adjusted for some other uses, to fit the problem. I aspire
+to create languages and tools that can improve software quality and security
+and increase programmer productivity for both medical and non-medical
+scientists, researchers, and workers.
+
+Recently, I have developed a keen interest in virtual reality and its
+applications in medical fields. As a result, I have worked on a few projects
+involving VR technologies using Unity, 3ds Max, Z Brush, and Substance Painter.
+That said, as of now, I am largely inexperienced in the field, but am open to
+any project involving medical VR technologies.
+
+The description of the program has given me a sense that PROGRAM is a great
+match for my interests!
+
+See my \href{https://www.davidoniani.com}{website} for research papers,
+projects, reports, and more!
+
+\makeletterclosing%
+
+\end{document}
