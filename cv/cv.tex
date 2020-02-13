@@ -1,5 +1,5 @@
 % This is a curriculum vitae built using the LaTeX package moderncv
-% Copyright (c) 2019 David Oniani <onianidavid@gmail.com>
+% Copyright (c) 2020 David Oniani <onianidavid@gmail.com>
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License version 1.3c,
 % available at http://www.latex-project.org/lppl/.
@@ -9,9 +9,9 @@
 % Settings {{{
 
 % moderncv class declaration
-% Possible options include font size ('10pt', '11pt' and '12pt')
-% Paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper',
-% 'executivepaper' and 'landscape'). Family of sources ('sans' and 'roman')
+% Font size options: 10pt, 11pt, and 12pt
+% Font family options: sans and roman
+% Paper options: a4paper, letterpaper, a5paper, legalpaper, executivepaper, and landscape.
 \documentclass[a4paper,10pt,sans]{moderncv}
 
 % Themes
@@ -25,7 +25,7 @@
 \usepackage{fancyhdr}                % Fancy headers and footers
 
 % These are the color schemes for the themes
-% These color schemes are taken from the corresponding '.sty' files
+% These color schemes are taken from the corresponding .sty files
 \definecolor{classicblack}{rgb}{0.0,0.0,0.0}      % black
 \definecolor{classicblue}{rgb}{0.22,0.45,0.70}    % blue
 \definecolor{classicgreen}{rgb}{0.35,0.70,0.30}   % green
@@ -53,7 +53,7 @@
 }
 
 % Display last updated date
-\lhead{\vspace{0.3cm}
+\lhead{\vspace{0.8em}
        \color{classicblue}
        \footnotesize{Updated: \today\ by David Oniani}}
 
@@ -77,26 +77,24 @@
 
 % Personal Data {{{
 
-\firstname{\color{classicblue} David}                                                % First name
-\lastname{\color{classicblue} Oniani}                                                % Last name
-\phone[mobile]{+1~(646)~565~1224}                                                    % Mobile number
-\email{onianidavid@gmail.com}                                                        % Email
-\homepage{www.davidoniani.com}                                                       % Personal Website
-\social[github][www.github.com/oniani]{www.github.com/oniani}                        % Github
-\social[linkedin][www.linkedin.com/in/davidoniani]{www.linkedin.com/in/davidoniani}  % LinkedIn
-
-% Message
-\quote{For my papers and projects please visit \url{https://www.davidoniani.com}.}
+\firstname{\color{classicblue} David}
+\lastname{\color{classicblue} Oniani}
+\phone[mobile]{+1~(646)~565~1224}
+\email{onianidavid@gmail.com}
+\homepage{www.davidoniani.com}
+\social[github][www.github.com/oniani]{www.github.com/oniani}
+\social[linkedin][www.linkedin.com/in/davidoniani]{www.linkedin.com/in/davidoniani}
+\quote{Please visit \url{https://www.davidoniani.com} for my papers, projects, and more!}
 
 % }}}
 
 % Begin the document
 \begin{document}
 
-% {{{ Title
+% Title {{{
 
 \vspace*{-1.25cm}
-\makecvtitle
+\makecvtitle%
 \vspace*{-1cm}
 
 % }}}
@@ -106,13 +104,11 @@
 \section{Education}
   \cventry{08/2017 -- 06/2021}
     {B.A. Computer Science, Mathematics}
-    {\href{www.luther.edu}{Luther College}}
+    {\href{https://www.luther.edu}{Luther College}}
     {Decorah}
     {IA}
-    {Double major in mathematics and computer science.\\
-     Advisor: Dr.~Alan K. Zaring.}
-     % \\
-     % Math Advisor(s): Dr. Philip Iversen and Dr. Kyle Fey.}
+    {Double major in mathematics and computer science.
+     Academic advisor: Dr.~Alan K. Zaring.}
 
   \cventry{10/2016 -- 12/2016}
     {Sales MBA Diploma}
@@ -176,9 +172,10 @@
 
 \section{Research Experience}
     % 08/2019 -- 12/2019
-    \cvitemwithcomment{\footnotesize{Fall 2019}}{\textbf{Directed research in programming languages with Dr. Alan K. Zaring.}}{}
+    \cvitemwithcomment{\footnotesize{Fall 2019}}{\textbf{Directed research in programming languages with Dr.~Alan K. Zaring.}}{}
     \cvlistitem{Redesigned and made a few significant contributions to the type system.}
     \cvlistitem{Introduced the notion of container types to the language.}
+    \cvlistitem{Designed relational operators for container types.}
 
     % 05/2019 -- 07/2019
     \cvitemwithcomment{\footnotesize{Summer 2019}}{\textbf{Collaborative research on visual persuasion with professor Richard K. Merritt.}}{}
