@@ -23,6 +23,7 @@
 \usepackage[margin=0.5in]{geometry}  % Adjust margins
 \usepackage[normalem]{ulem}          % Cool underline
 \usepackage{fancyhdr}                % Fancy headers and footers
+\usepackage{multicol}                % Multiple columns
 
 % These are the color schemes for the themes
 % These color schemes are taken from the corresponding .sty files
@@ -213,6 +214,47 @@
 
 % }}}
 
+% Language Proficiency {{{
+
+\section{Language Proficiency}
+\hspace*{\fill}
+\begin{minipage}{\maincolumnwidth}
+  \begin{multicols}{3}
+    \begin{itemize}
+      \item English, Native
+      \item Georgian, Native
+    \end{itemize}
+    \columnbreak%
+    \begin{itemize}
+      \item Russian, Native
+      \item Japanese, Elementary
+    \end{itemize}
+    \columnbreak%
+    \begin{itemize}
+      \item Mingrelian, Native
+    \end{itemize}
+  \end{multicols}
+\end{minipage}
+
+% }}}
+
+% Technical Skills {{{
+
+\section{Technical Skills}
+  \cvitem{Languages:}
+         {Python, Haskell, Shellscript (POSIX-compliant), Rust, JavaScript,
+          Java, R, C++, C, HTML, CSS, TypeScript, Bash, Zsh, Vimscript, SQL,
+          Standard ML, Scheme, VBA, Lua, C\#, CCL, Batch script, Prolog.}
+  \cvitem{Development Tools:}
+         {macOS, Linux, kitty, Neovim, VS Code, Git, Jekyll, WordPress,
+          Virtual Box, GitHub, Jupyter, SageMath, RStudio, Cron, Travis CI,
+          Blender, Unity, Adobe Illustrator, ZBrush, Substance Painter,
+          3DS Max.}
+  \cvitem{Other Skills:}
+         {\LaTeX, Technical Writing, Markdown.}
+
+% }}}
+
 % Other Courses and Certificates {{{
 
 \section{Other Courses and Certificates}
@@ -236,33 +278,6 @@
 
   \cvitem{2016}
          {\href{https://www.transparency.ge/en}{Parliamentary Elections Observation Mission Training}, Transparency International Georgia}
-
-% }}}
-
-% Technical Skills {{{
-\section{Technical Skills}
-  \cvitem{Languages:}
-         {Python, Haskell, Shellscript (POSIX-compliant), Rust, JavaScript,
-          Java, R, C++, C, HTML, CSS, TypeScript, Bash, Zsh, Vimscript, SQL,
-          Standard ML, Scheme, VBA, Lua, C\#, CCL, Batch script, Prolog.}
-  \cvitem{Development Tools:}
-         {macOS, Linux, kitty, Neovim, VS Code, Git, Jekyll, WordPress,
-          Virtual Box, GitHub, Jupyter, SageMath, RStudio, Cron, Travis CI,
-          Blender, Unity, Adobe Illustrator, ZBrush, Substance Painter,
-          3DS Max.}
-  \cvitem{Other Skills:}
-         {\LaTeX, Technical Writing, Markdown.}
-
-% }}}
-
-% Language Proficiency {{{
-
-\section{Language Proficiency}
-  \cvitem{English}{Native Proficiency}
-  \cvitem{Georgian}{Native Proficiency}
-  \cvitem{Russian}{Native  Proficiency}
-  \cvitem{Japanese}{Elementary Proficiency}
-  \cvitem{Mingrelian}{Native Proficiency (one of Kartvelian languages, widespread in western parts of Georgia)}
 
 % }}}
 
