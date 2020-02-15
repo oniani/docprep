@@ -3,7 +3,7 @@ title: "Note #1 -- Interesting Topic"
 author: "David Oniani"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 keywords: "Keyword 1, Keyword 2, Keyword 3"
-fontsize: 12pt
+fontsize: 11pt
 geometry: margin=1in
 urlcolor: blue
 output:
