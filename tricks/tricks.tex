@@ -39,9 +39,6 @@
 % Setup
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Line spacing is 1.5
-\renewcommand{\baselinestretch}{1.5}
-
 % Remove indentations from paragraphs
 \setlength{\parindent}{0pt}
 
@@ -57,6 +54,12 @@
     citecolor={black!50!blue},
     urlcolor={black!50!blue}
 }
+
+% Font size for minted
+\setminted{fontsize=\footnotesize}
+
+% Colorscheme for minted
+\usemintedstyle{tango}
 
 % Dots for ToC
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -137,6 +140,7 @@ We first create a \mintinline{python}{Node} class.
         class TrieNode:
             def __init__(self) -> None:
                 """Initialize the `TrieNode` class."""
+
                 self._children: dict[str, TrieNode] = {}
                 self._isendofword: bool = False
     \end{minted}
@@ -151,6 +155,7 @@ root of the trie.
         class Trie:
             def __init__(self) -> None:
                 """Initialize the `Trie` class."""
+
                 self._root = TrieNode()
     \end{minted}
 \end{figure}
@@ -167,6 +172,7 @@ position and once again, follow that road.
     \begin{minted}{python}
         def insert(self, word: str) -> None:
             """Initialize the `Trie` class."""
+
             ptr: Node = self._root
             for char in word:
                 if char not in ptr._children:
@@ -185,6 +191,7 @@ The implementation of this algorithm is shown below.
     \begin{minted}{python}
         def search(self, word: str) -> bool:
             """Check if a trie contains a given word."""
+
             ptr: Node = self._root
             for char in word:
                 if char not in ptr._children:
@@ -201,8 +208,9 @@ the same as the code for searching a word.
 \begin{figure}[H]
     \centering
     \begin{minted}{python}
-        def prefix(self, word: str) -> bool:
+        def prefix_search(self, word: str) -> bool:
             """Check if a trie contains a given prefix."""
+
             ptr: Node = self._root
             for char in word:
                 if char not in ptr._children:
@@ -222,13 +230,15 @@ the same as the code for searching a word.
 \section{Merge Sort}
 
 Merge sort is one of the simplest sorting algorithms that scales very well. It
-relies on two operations - \mintinline{python}{merge} and \mintinline{python}{sort}.
+relies on two operations - \mintinline{python}{merge} and
+\mintinline{python}{sort}.
 
 \begin{figure}[H]
     \centering
     \begin{minted}{python}
         def merge(arr1: list[int], arr2: list[int]) -> list[int]:
             """Merge two sorted lists."""
+
             res: list[int] = []
 
             i: int = 0
@@ -261,6 +271,7 @@ We now need to implement the sort function.
     \begin{minted}{python}
         def sort(arr: list[int]) -> list[int]:
             """Performs a merge sort."""
+
             if len(nums) <= 1:
                 return nums
             
@@ -269,6 +280,69 @@ We now need to implement the sort function.
             right: list[int] = sort(arr[mid:])
 
             return merge(left, right)
+    \end{minted}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Levenshtein Distance
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\section{Levenshtein Distance (Edit Distance)}
+
+Given two strings \mintinline{python}{word1} and \mintinline{python}{word2}, we
+need to find the optimal/minimum number of operations required to convert
+\mintinline{python}{word1} to \mintinline{python}{word2}. We are permitted the
+following four operations:
+
+\begin{itemize}
+    \item Insert a character
+    \item Delete a character
+    \item Replace a character
+    \item Keep a character
+\end{itemize}
+
+We take the bottom-up dynamic programming approach:
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}{python}
+        def levenshtein_distance(self, word1: str, word2: str) -> int:
+            """Computes the Levenshtein's distance between two words."""
+
+            # Get the lengths
+            m: int = len(word1)
+            n: int = len(word2)
+
+            # Prepopulate the DP matrix
+            dp: list[list[int]] = [
+                [0 for _ in range(n + 1)] for _ in range(m + 1)
+            ]
+
+            # Initialize the DP matrix with base cases
+            for i in range(1, m + 1):
+                dp[i][0] += i
+            for j in range(1, n + 1):
+                dp[0][j] += j
+
+            # Fill the DP Matrix
+            for i in range(1, m + 1):
+                for j in range(1, n + 1):
+                    left: int = dp[i][j - 1]
+                    top: int = dp[i - 1][j]
+                    top_left: int = dp[i - 1][j - 1]
+
+                    # If characters are equal, just copy the diagonal value
+                    if word1[i - 1] == word2[j - 1]:
+                        dp[i][j] = top_left
+                    # Otherwise, take the minimum of three adjacent cells and
+                    # increment the result by one
+                    else:
+                        dp[i][j] = min(left, top, top_left) + 1
+
+            # Return the optimal solution
+            return dp[m][n]
     \end{minted}
 \end{figure}
 
