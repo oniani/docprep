@@ -56,7 +56,7 @@
 }
 
 % Font size for minted
-\setminted{fontsize=\footnotesize}
+\setminted{fontsize=\small}
 
 % Colorscheme for minted
 \usemintedstyle{tango}
@@ -225,7 +225,7 @@ the same as the code for searching a word.
 % Merge Sort
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\clearpage
 
 \section{Merge Sort}
 
@@ -284,12 +284,12 @@ We now need to implement the sort function.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Levenshtein Distance
+% Levenshtein Distance - Edit Distance
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\clearpage
 
-\section{Levenshtein Distance (Edit Distance)}
+\section{Levenshtein Distance - Edit Distance}
 
 Given two strings \mintinline{python}{word1} and \mintinline{python}{word2}, we
 need to find the optimal/minimum number of operations required to convert
@@ -350,7 +350,7 @@ We take the bottom-up dynamic programming approach:
 % Balanced Parentheses
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+\clearpage
 
 \section{Balanced Parentheses}
 
@@ -413,6 +413,33 @@ implementation generalizes well:
             return not stack
     \end{minted}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Kadane's Algorithm - Maximum Contiguous Subarray
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\section{Kadane's Algorithm - Maximum Contiguous Subarray}
+
+An implemmentation of the Kadane's algorithm.
+
+\begin{figure}[H]
+    \centering
+    \begin{minted}{python}
+        def max_subarray_sum(arr: list[float]) -> float:
+            """Return the maximum subarray sum."""
+
+            cur: float = 0
+            res: float = float("-inf")
+            for num in nums:
+                cur = max(cur + num, num)
+                res = max(res, cur)
+            return res
+    \end{minted}
+\end{figure}
+
+This algorithm is a trivial example of dynamic programming.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The End of the Document
