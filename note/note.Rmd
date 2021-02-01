@@ -44,7 +44,7 @@ dictumst.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta purus et
 sem gravida rutrum. Maecenas blandit nulla ac luctus tempus. Nam finibus
 
-$$f(x) = 16x^7 + 12x^4 + 3x^3 - 2x + 1$$
+\[f(x) = 16x^7 + 12x^4 + 3x^3 - 2x + 1\]
 
 Sed finibus ligula quam, et lacinia velit posuere auctor. Donec ligula
 lorem, dictum nec lectus in, vehicula tincidunt massa. In hac habitasse platea
